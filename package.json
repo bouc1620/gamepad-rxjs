@@ -1,0 +1,15 @@
+{
+  "name": "gamepad-rxjs",
+  "version": "1.0.0",
+  "description": "A class to use the Gamepad API with RxJs Observables",
+  "license": "ISC",
+  "author": "Charles Boudreault",
+  "type": "module",
+  "main": "index.ts",
+  "peerDependencies": {
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "typescript": "~4.2.0"
+  }
+}
