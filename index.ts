@@ -1,16 +1,16 @@
 import {
   animationFrameScheduler,
-  concat,
-  filter,
-  fromEvent,
-  interval,
-  map,
-  Observable,
-  of,
-  pairwise,
   shareReplay,
+  Observable,
+  fromEvent,
   switchMap,
   takeUntil,
+  pairwise,
+  interval,
+  concat,
+  filter,
+  map,
+  of,
 } from 'rxjs';
 
 export interface ButtonEvent {
@@ -174,7 +174,7 @@ export class GamepadObservables {
 
   /**
    * @param {number} buttonIndex - 0 to 16 inclusive, the index of the button to observe
-   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the button goes from released to pressed
+   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the button changes from released to pressed
    */
   buttonPressed$(buttonIndex: number): Observable<ButtonEvent> {
     return this.#buttonsObservables[buttonIndex].pressed$;
@@ -182,7 +182,7 @@ export class GamepadObservables {
 
   /**
    * @param {number} buttonIndex - 0 to 16 inclusive, the index of the button to observe
-   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the button goes from pressed to released
+   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the button changes from pressed to released
    */
   buttonReleased$(buttonIndex: number): Observable<ButtonEvent> {
     return this.#buttonsObservables[buttonIndex].released$;
@@ -190,7 +190,7 @@ export class GamepadObservables {
 
   /**
    * @param {number} buttonIndex - 0 to 16 inclusive, the index of the button to observe
-   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the button's analog value changes
+   * @returns {Observable<ButtonEvent>} - RxJs Observable emmiting when the GamepadButton.value analog property defining the pressure changes
    */
   buttonChange$(buttonIndex: number): Observable<ButtonEvent> {
     return this.#buttonsObservables[buttonIndex].change$;
