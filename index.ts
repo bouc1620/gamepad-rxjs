@@ -45,9 +45,9 @@ const idleGamepad = Object.freeze({
     touched: false,
     value: 0,
   })),
-}) as unknown as Gamepad;
+} as unknown as Gamepad);
 
-const getDegreeAngle = (x: number, y: number): number =>
+const getAngleFromCoordinates = (x: number, y: number): number =>
   ((Math.atan2(y, x) + Math.PI * 2) % (Math.PI * 2)) * (180 / Math.PI);
 
 export class GamepadObservables {
@@ -57,7 +57,7 @@ export class GamepadObservables {
   ).pipe(map(() => idleGamepad));
 
   /**
-   * RxJs Observable emmiting the polled Gamepad object every 15 milliseconds
+   * RxJs Observable emmiting the polled Gamepad state every 15 milliseconds
    * @type {Observable<Gamepad>}
    * */
   gamepadEvent$: Observable<Gamepad> = this.#gamepadConnected$.pipe(
@@ -157,7 +157,7 @@ export class GamepadObservables {
             const pressure = Math.sqrt(x ** 2 + y ** 2);
 
             return {
-              angle: getDegreeAngle(x, y),
+              angle: getAngleFromCoordinates(x, y),
               pressure: pressure >= 0.975 ? 1 : pressure,
             };
           }),
