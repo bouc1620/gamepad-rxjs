@@ -1,6 +1,6 @@
 {
   "name": "gamepad-rxjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "bouc1620",
   "description": "A class to use the Gamepad API with RxJs Observables",
   "keywords": [
