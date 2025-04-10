@@ -57,8 +57,8 @@ player2
     console.log(`Player 2 rotated the left joystick ${motion}.`);
   });
 
-// since all other observables are event based and will emit only once a button is pressed
-// or once a joystick angle has changed, you can use this observable which polls the Gamepad's
+// since all the other observables will emit only once a button is pressed or once
+// a joystick angle has changed, you can use this observable which polls the gamepad's
 // state every 15ms to obtain the gamepad's current state
 player1.gamepadEvent$
   .pipe(throttle(() => interval(5000)))
