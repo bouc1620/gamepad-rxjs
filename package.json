@@ -1,9 +1,17 @@
 {
   "name": "gamepad-rxjs",
   "version": "1.0.0",
+  "author": "bouc1620",
   "description": "A class to use the Gamepad API with RxJs Observables",
-  "license": "ISC",
-  "author": "Charles Boudreault",
+  "keywords": [
+    "rxjs",
+    "gamepad",
+    "gamepad api",
+    "controller",
+    "joystick"
+  ],
+  "repository": "https://github.com/bouc1620/gamepad-rxjs",
+  "license": "MIT",
   "type": "module",
   "main": "index.ts",
   "peerDependencies": {
