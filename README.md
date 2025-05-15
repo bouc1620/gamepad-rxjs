@@ -16,7 +16,7 @@ import {
   ButtonEvent,
   JoystickDirectionEvent,
 } from 'gamepad-rxjs';
-import { merge, filter, throttle, interval, map, pairwise } from 'rxjs';
+import { merge, throttle, interval, map, distinctUntilChanged } from 'rxjs';
 
 const player1 = new GamepadObservables(0);
 const player2 = new GamepadObservables(1);
@@ -49,9 +49,7 @@ player2
         ? 'clockwise'
         : 'counterclockwise';
     }),
-    pairwise(),
-    filter(([previous, current]) => previous !== current),
-    map(([_, current]) => current)
+    distinctUntilChanged(),
   )
   .subscribe((motion: 'clockwise' | 'counterclockwise') => {
     console.log(`Player 2 rotated the left joystick ${motion}.`);
