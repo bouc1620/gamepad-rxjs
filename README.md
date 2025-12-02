@@ -19,8 +19,8 @@ import { merge, throttle, interval, map, distinctUntilChanged } from 'rxjs';
 const player1 = new GamepadObservables(0);
 const player2 = new GamepadObservables(1);
 
-// emits only when the button's state changes
-// refer to the Gamepad API documentation for the button mappings
+// Emits an event only when the button state changes (press or release).
+// Button index 9 corresponds to the “Start” button — see the Gamepad API docs for mappings.
 merge(player1.buttonPressed$(9), player1.buttonReleased$(9)).subscribe(
   ({ current }: ButtonEvent) => {
     console.log(
@@ -31,9 +31,8 @@ merge(player1.buttonPressed$(9), player1.buttonReleased$(9)).subscribe(
   }
 );
 
-// every observable emits both the previous and current button states
-// this one provides the joystick's angle and pressure (distance from the center,
-// a decimal number from 0 to 1) instead of its x and y coordinates
+// Each observable emits both the previous and current joystick state.
+// This stream provides the joystick’s angle and pressure (0–1) instead of raw x/y values.
 player2
   .joystickDirection$(0)
   .pipe(
@@ -53,13 +52,14 @@ player2
     console.log(`Player 2 rotated the left joystick ${motion}.`);
   });
 
-// since all the other observables will emit only once a button is pressed or once
-// a joystick angle has changed, you can use this observable which polls the gamepad's
-// state every 15ms to obtain the gamepad's current state
+// Other observables emit only on state changes (button press/release or joystick movement).
+// gamepadEvent$ emits a full snapshot of the gamepad state every 15 ms,
+// allowing you to access the current state at any time.
 player1.gamepadEvent$
   .pipe(throttle(() => interval(5000)))
   .subscribe((gamepad: Gamepad) => {
     console.log(`This is a snapshot of Player 1's gamepad state: `, gamepad);
   });
 ```
+
 
