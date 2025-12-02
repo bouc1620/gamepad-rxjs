@@ -1,8 +1,6 @@
 # gamepad-rxjs
 
-A class to use the Gamepad API with RxJs Observables
-
-Polls the Gamepad state every 15ms to emit button presses/releases or joystick movements.
+A wrapper around the Gamepad API that polls every 15 ms and exposes button and joystick events as RxJS observables.
 
 ## Install
 
@@ -64,3 +62,4 @@ player1.gamepadEvent$
     console.log(`This is a snapshot of Player 1's gamepad state: `, gamepad);
   });
 ```
+
