@@ -2,5 +2,14 @@
   "description": {
     "fr": "Un wrapper autour du Gamepad API qui effectue un polling toutes les 15 ms et expose les événements des boutons et des joysticks sous forme d’Observables RxJS.",
     "en": "A wrapper around the Gamepad API that polls every 15 ms and exposes button and joystick events as RxJS Observables."
-  }
+  },
+  "keywords": [
+    "RxJS",
+    "Gamepad API",
+    "TypeScript",
+    "npm package"
+  ],
+  "languages": [
+    "TypeScript"
+  ]
 }
