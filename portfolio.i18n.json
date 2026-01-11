@@ -1,4 +1,5 @@
 {
+  "webpage": "https://www.npmjs.com/package/gamepad-rxjs",
   "description": {
     "fr": "Ce package encapsule le Gamepad API et expose toutes les entrées comme des Observables RxJS. Il convient aux configurations multi-joueurs, permettant de gérer de manière réactive les changements d’état et de répondre aux entrées discrètes et continues.",
     "en": "This package wraps the Gamepad API and exposes all inputs as RxJS Observables. It is suitable for multi-player setups, allowing developers to reactively handle changes in state and respond to both discrete and continuous inputs."
