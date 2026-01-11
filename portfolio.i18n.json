@@ -4,12 +4,20 @@
     "fr": "Un wrapper autour du Gamepad API qui expose les événements des boutons et des joysticks comme des Observables RxJS. Il convient aux configurations multi-joueurs, permettant de gérer de manière réactive les entrées discrètes et continues.",
     "en": "This package wraps the Gamepad API and exposes all inputs as RxJS Observables. It is suitable for multi-player setups, allowing developers to reactively handle changes in state and respond to both discrete and continuous inputs."
   },
-  "keywords": [
-    "RxJS",
-    "Gamepad API",
-    "TypeScript",
-    "npm package"
-  ],
+  "keywords": {
+    "fr": [
+      "RxJS",
+      "Gamepad API",
+      "TypeScript",
+      "package npm"
+    ],
+    "en": [
+      "RxJS",
+      "Gamepad API",
+      "TypeScript",
+      "npm package"
+    ]
+  },
   "languages": [
     "TypeScript"
   ]
