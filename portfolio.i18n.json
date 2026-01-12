@@ -6,15 +6,15 @@
   },
   "keywords": {
     "fr": [
+      "TypeScript",
       "RxJS",
       "Gamepad API",
-      "TypeScript",
       "package npm"
     ],
     "en": [
+      "TypeScript",
       "RxJS",
       "Gamepad API",
-      "TypeScript",
       "npm package"
     ]
   }
